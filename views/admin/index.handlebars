@@ -1,0 +1,15 @@
+
+<h2>Post List</h2>
+<a href="/admin/posts"><button>Add post</button></a>
+{{#each posts}}
+<hr>
+<h3>{{title}}</h3><br>
+<p>{{description}}</p>
+<a href="/admin/post/edit/{{_id}}"><button>Editar</button></a>
+ 
+<form action="/admin/post/delete" method="POST">
+    <input type="hidden" name="id"value="{{_id}}">
+    <button>Delete</button>
+</form>
+{{else}}
+{{/each}}
